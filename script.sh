@@ -2,6 +2,9 @@
 echo -n "Check vim plugin install.. "
 if test ! -d ~/.vim/bundle/Vundle.vim; then
     echo;
+    if test ! -f ~/.vimrc; then
+        cp vimrc ~/.vimrc
+    fi
     git clone https://github.com/VundleVim/Vundle.vim.git;
     vim -c :PluginInstall <<EOF 
     ZZ
