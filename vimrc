@@ -1,14 +1,3 @@
-map <F2> :NERDTreeToggle<CR>
-map <F3> :TlistToggle<CR>
-map <F4> g<c-]>
-map <F5> <c-t>
-map <F6> * 
-map <F7> #
-map <F8> :set invnumber<CR>
-map <F9> :set wrap!<CR>
-map <F10> zc
-map <F11> zo
-map <Esc>0q <c-e>
 if &term=="xterm" || &term=="xterm-color"
     set t_Co=8
     set t_Sb=^[4%dm
@@ -31,8 +20,6 @@ if &term=="xterm" || &term=="xterm-color"
     :imap <Esc>Ol +
     :imap <Esc>OS -
 endif
-let g:NERDTreeWinPos = "right"
-
 set tags=./tags,tags;
 let Tlist_Use_Right_Window=1
 syntax on
@@ -62,15 +49,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
     " let Vundle manage Vundle, required
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'airblade/vim-gitgutter'   
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'scrooloose/syntastic'
-    Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'AutoComplPop'
-    Plugin 'taglist-plus'
+"    Plugin 'VundleVim/Vundle.vim'
+"    Plugin 'vim-airline/vim-airline'
+"    Plugin 'scrooloose/nerdtree'
+"    Plugin 'airblade/vim-gitgutter'   
+"    Plugin 'tpope/vim-fugitive'
+"    Plugin 'scrooloose/syntastic'
+"    Plugin 'ctrlpvim/ctrlp.vim'
+"    Plugin 'AutoComplPop'
+"    Plugin 'taglist-plus'
 
     call vundle#end()            " required
 filetype plugin indent on    " required
