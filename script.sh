@@ -37,12 +37,12 @@ fi
 
 echo -n "Check bashrc.. "
 if test ! -f /etc/bashrc; then
-    echo;
     if test ! -f bashrc; then
         echo "[fail]"
     else
-        cp bashrc /etc/bashrc;
+        sudo cp bashrc /etc/bashrc;
         sources ~/.bashrc;
+        echo "[installed]";
     fi
 else
     echo "[OK]"
