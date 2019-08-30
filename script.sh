@@ -1,14 +1,8 @@
 #!/bin/bash
-echo -n "Check vim plugin install.. "
+echo -n "Check vim vumdle install.. "
 if test ! -d ~/.vim/bundle/Vundle.vim; then
     echo;
-    if test ! -f ~/.vimrc; then
-        cp vimrc ~/.vimrc
-    fi
     git clone https://github.com/VundleVim/Vundle.vim.git;
-    vim -c :PluginInstall <<EOF 
-    ZZ
-EOF
 else
     echo "[OK]"
 fi
@@ -40,3 +34,31 @@ if test ! -f /bin/cscope && test ! -f /usr/bin/cscope; then
 else
     echo "[OK]"
 fi
+
+echo -n "Check bashrc.. "
+if test ! -f /etc/bashrc; then
+    echo;
+    if test ! -f bashrc; then
+        echo "[fail]"
+    else
+        cp bashrc /etc/bashrc;
+        sources ~/.bashrc;
+    fi
+else
+    echo "[OK]"
+fi
+
+echo -n "Check colordiff install.. "
+if test ! -f /bin/colordiff && test ! -f /usr/bin/colordiff; then
+    echo;
+    sudo mv /etc/apt/sources.list.d/dzos-sources.list /etc/apt/sources.list.d/dzos-sources.list.bak;
+    sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
+    sudo apt-get update;
+    sudo apt-get -f upgrade;
+    sudo apt-get -y install colordiff;
+    sudo rm -f /etc/apt/sources.list.d/dzos-sources.list;
+    sudo mv /etc/apt/sources.list.d/dzos-sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
+else
+    echo "[OK]"
+fi
+
