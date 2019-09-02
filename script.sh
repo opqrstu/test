@@ -12,7 +12,7 @@ if test ! -f /bin/ctags && test ! -f /usr/bin/ctags; then
     echo;
     sudo mv /etc/apt/sources.list.d/dzos-sources.list /etc/apt/sources.list.d/dzos-sources.list.bak;
     sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
-    sudo apt-get update;
+    sudo apt-get -y update;
     sudo apt-get -f upgrade;
     sudo apt-get -y install ctags;
     sudo rm -f /etc/apt/sources.list.d/dzos-sources.list;
@@ -26,7 +26,7 @@ if test ! -f /bin/cscope && test ! -f /usr/bin/cscope; then
     echo;
     sudo mv /etc/apt/sources.list.d/dzos-sources.list /etc/apt/sources.list.d/dzos-sources.list.bak;
     sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
-    sudo apt-get update;
+    sudo apt-get -y update;
     sudo apt-get -f upgrade;
     sudo apt-get -y install cscope;
     sudo rm -f /etc/apt/sources.list.d/dzos-sources.list;
@@ -37,12 +37,12 @@ fi
 
 echo -n "Check bashrc.. "
 if test ! -f /etc/bashrc; then
-    echo;
     if test ! -f bashrc; then
         echo "[fail]"
     else
-        cp bashrc /etc/bashrc;
-        sources ~/.bashrc;
+        sudo cp bashrc /etc/bashrc;
+        source ~/.bashrc;
+        echo "[installed]"
     fi
 else
     echo "[OK]"
@@ -53,7 +53,7 @@ if test ! -f /bin/colordiff && test ! -f /usr/bin/colordiff; then
     echo;
     sudo mv /etc/apt/sources.list.d/dzos-sources.list /etc/apt/sources.list.d/dzos-sources.list.bak;
     sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
-    sudo apt-get update;
+    sudo apt-get -y update;
     sudo apt-get -f upgrade;
     sudo apt-get -y install colordiff;
     sudo rm -f /etc/apt/sources.list.d/dzos-sources.list;
