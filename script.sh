@@ -13,7 +13,7 @@ if test ! -f /bin/ctags && test ! -f /usr/bin/ctags; then
     sudo mv /etc/apt/sources.list.d/dzos-sources.list /etc/apt/sources.list.d/dzos-sources.list.bak;
     sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
     sudo apt-get -y update;
-    sudo apt-get -f upgrade;
+    sudo apt-get -f -y upgrade;
     sudo apt-get -y install ctags;
     sudo rm -f /etc/apt/sources.list.d/dzos-sources.list;
     sudo mv /etc/apt/sources.list.d/dzos-sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
@@ -27,7 +27,7 @@ if test ! -f /bin/cscope && test ! -f /usr/bin/cscope; then
     sudo mv /etc/apt/sources.list.d/dzos-sources.list /etc/apt/sources.list.d/dzos-sources.list.bak;
     sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
     sudo apt-get -y update;
-    sudo apt-get -f upgrade;
+    sudo apt-get -f -y upgrade;
     sudo apt-get -y install cscope;
     sudo rm -f /etc/apt/sources.list.d/dzos-sources.list;
     sudo mv /etc/apt/sources.list.d/dzos-sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
@@ -54,7 +54,7 @@ if test ! -f /bin/colordiff && test ! -f /usr/bin/colordiff; then
     sudo mv /etc/apt/sources.list.d/dzos-sources.list /etc/apt/sources.list.d/dzos-sources.list.bak;
     sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
     sudo apt-get -y update;
-    sudo apt-get -f upgrade;
+    sudo apt-get -f -y upgrade;
     sudo apt-get -y install colordiff;
     sudo rm -f /etc/apt/sources.list.d/dzos-sources.list;
     sudo mv /etc/apt/sources.list.d/dzos-sources.list.bak /etc/apt/sources.list.d/dzos-sources.list;
